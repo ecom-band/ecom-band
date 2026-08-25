@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ECOM BAND — ecomband.com
 
-## Getting Started
+Marketing website for ECOM BAND PRIVATE LIMITED, built per
+[`website-creation-plan-v1.md`](../website-creation-plan-v1.md) from the client
+requirements in [`business-info-and-requirements/`](../business-info-and-requirements/).
 
-First, run the development server:
+## Stack
+
+- **Next.js 15** (App Router, TypeScript, all pages statically rendered)
+- **Tailwind CSS v4** — design tokens in [`app/globals.css`](app/globals.css)
+- **Motion** (Framer Motion) — hero sequence, scroll reveals; respects reduced motion
+- **React Hook Form + Zod** — contact form validation (shared client/server)
+- **Resend** — contact form email delivery to info@ecomband.com
+
+## Develop
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in keys (see below)
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment (`.env.local` / Vercel project settings)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Variable | Purpose |
+| --- | --- |
+| `RESEND_API_KEY` | Required in production for the contact form |
+| `CONTACT_TO` | Inquiry recipient (default `info@ecomband.com`) |
+| `CONTACT_FROM` | Sender on a Resend-verified domain, e.g. `ECOM BAND <website@ecomband.com>` |
+| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID — loads only after cookie consent |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Content editing
 
-## Learn More
+All copy and data live in [`content/`](content/):
 
-To learn more about Next.js, take a look at the following resources:
+- `site.ts` — brand info, email, **pending items** (phone, WhatsApp, address) behind `display` flags
+- `services.ts` — the nine services (cards + detail pages are generated from this)
+- `faq.ts` — grouped FAQs; `featured: true` items appear on the homepage
+- `process.ts` — the 5-step process
+- `nav.ts` — header/footer navigation
+- `success-stories.ts` — dashboard screenshots for the homepage strip and `/success-stories`; images live in `public/success-stories/`. Current entries are generated **sample** SVGs (`placeholder: true`) — replace them with real, redacted client screenshots (see the how-to comment at the top of the file)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To activate the WhatsApp widget or phone display: set the value and flip
+`display: true` in `content/site.ts`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+To swap in the official logo: replace [`components/layout/Logo.tsx`](components/layout/Logo.tsx)
+(or drop SVGs into `public/brand/` and reference them there).
 
-## Deploy on Vercel
+## Deploy (Vercel)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Push this repo to GitHub and import into Vercel.
+2. Set the environment variables above.
+3. Add domain `ecomband.com` in Vercel → follow DNS instructions at GoDaddy
+   (A record / CNAME as Vercel specifies).
+4. Verify `ecomband.com` in Resend to enable `CONTACT_FROM` on the brand domain.
+5. Add the site to Google Search Console and submit `/sitemap.xml`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Pre-launch checklist (from requirements doc §10)
+
+- [ ] Official logo files received and swapped in
+- [ ] Real success-story screenshots received (redacted), sample SVGs removed from `content/success-stories.ts` + `public/success-stories/`
+- [ ] Phone / WhatsApp numbers confirmed → flip flags in `content/site.ts`
+- [ ] Office address confirmed
+- [ ] Social profiles confirmed (LinkedIn already live)
+- [ ] Brand colors confirmed against official logo (tokens in `app/globals.css`)
+- [ ] Legal pages reviewed by counsel (`/privacy-policy`, `/terms`)
+- [ ] `RESEND_API_KEY` set and test inquiry delivered to info@ecomband.com
+- [ ] GA4 property created, `NEXT_PUBLIC_GA_ID` set, `generate_lead` event verified
