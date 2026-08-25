@@ -58,7 +58,7 @@ export function ConsentAnalytics() {
         </>
       )}
 
-      {GA_ID && ready && consent === null && (
+      {ready && consent === null && (
         <div
           role="region"
           aria-label="Cookie consent"
