@@ -114,8 +114,16 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </Reveal>
-          <Reveal delay={0.12}>
-            <OperationsPanel />
+          {/* IMG-0A — photo as the back card; the ops console floats over its lower-right */}
+          <Reveal delay={0.12} className="relative">
+            <div className="relative mx-auto max-w-lg pt-0 pb-0 lg:mx-0 lg:ml-auto">
+              <div className="w-[80%] sm:w-[74%]">
+                <ImagePlaceholder spec={homeImages.whatWeDo} id="IMG-0A" align="top" />
+              </div>
+              <div className="relative -mt-[16%] ml-auto w-[88%] sm:-mt-[34%] sm:w-[78%]">
+                <OperationsPanel />
+              </div>
+            </div>
           </Reveal>
         </div>
       </Section>

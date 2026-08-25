@@ -4,6 +4,8 @@ import { motion, useReducedMotion } from "motion/react";
 import { ButtonLink } from "@/components/ui/Button";
 import { OpsBand } from "@/components/band/OpsBand";
 import { BandConveyor } from "@/components/band/BandConveyor";
+import { ImagePlaceholder } from "@/components/blocks/ImagePlaceholder";
+import { homeImages } from "@/content/images";
 
 const WORDS = ["Build.", "Scale.", "Grow."];
 
@@ -19,6 +21,22 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden bg-ink text-paper">
+      {/* IMG-00 — full-bleed backdrop photo. Once real: render as a cover image at
+          ~12–18% opacity with the same gradient veil below so the text stays AA. */}
+      <div aria-hidden className="absolute inset-0">
+        <ImagePlaceholder
+          spec={homeImages.heroBackdrop}
+          id="IMG-00"
+          dark
+          fill
+          minimal
+          className="rounded-none border-0 opacity-80"
+        />
+        {/* veil — keeps the headline legible and fades the photo toward the band */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(13,19,33,0.92)_0%,rgba(13,19,33,0.78)_45%,rgba(13,19,33,0.55)_100%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink to-transparent" />
+      </div>
+
       {/* faint grid ground — the ops infrastructure feel */}
       <div
         aria-hidden

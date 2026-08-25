@@ -28,6 +28,8 @@ export function ImagePlaceholder({
   dark = false,
   compact = false,
   fill = false,
+  minimal = false,
+  align = "center",
   id,
   className,
 }: {
@@ -38,6 +40,10 @@ export function ImagePlaceholder({
   compact?: boolean;
   /** Fill the parent (parent sets the size) instead of using `aspect`. */
   fill?: boolean;
+  /** Backdrop mode: frame + hatch only, spec shrinks to a corner chip. */
+  minimal?: boolean;
+  /** Where the spec card sits — "top" when something overlaps the lower part. */
+  align?: "center" | "top";
   /** Optional reference id shown in the corner tag, e.g. "IMG-07". */
   id?: string;
   className?: string;
@@ -127,6 +133,7 @@ export function ImagePlaceholder({
       )}
 
       {/* reference tag */}
+      {!minimal && (
       <span
         aria-hidden
         className={cn(
@@ -138,9 +145,53 @@ export function ImagePlaceholder({
       >
         {compact ? (id ?? "Image") : `${id ? `${id} · ` : ""}Image placeholder`}
       </span>
+      )}
+
+      {/* minimal: one corner chip carries the brief */}
+      {minimal && (
+        <div
+          className={cn(
+            "absolute right-4 bottom-4 max-w-xs rounded-lg border px-3.5 py-2.5 text-left backdrop-blur-[2px] sm:right-6 sm:bottom-6",
+            dark ? "border-amber/30 bg-ink/80" : "border-amber/50 bg-paper/92",
+          )}
+        >
+          <p
+            className={cn(
+              "font-mono text-[0.55rem] font-semibold tracking-[0.2em] uppercase",
+              dark ? "text-amber-soft" : "text-amber-deep",
+            )}
+          >
+            {id ? `${id} · ` : ""}Backdrop image
+          </p>
+          <p className="type-display-sub mt-1 text-sm">{spec.title}</p>
+          <p
+            className={cn(
+              "mt-1 text-[0.7rem] leading-snug",
+              dark ? "text-slate-light" : "text-slate",
+            )}
+          >
+            {spec.description}
+          </p>
+          <p
+            className={cn(
+              "mt-1.5 font-mono text-[0.55rem] tracking-[0.14em] uppercase",
+              dark ? "text-amber-soft/80" : "text-amber-deep/90",
+            )}
+          >
+            {aspect.replace("/", ":")}
+            {spec.minSize ? ` · min ${spec.minSize}` : ""}
+          </p>
+        </div>
+      )}
 
       {/* spec card */}
-      <div className="absolute inset-0 flex items-center justify-center px-4 pt-10 pb-4 sm:px-6 sm:pt-11 sm:pb-6">
+      {!minimal && (
+      <div
+        className={cn(
+          "absolute inset-0 flex justify-center px-4 pt-10 pb-4 sm:px-6 sm:pt-11 sm:pb-6",
+          align === "top" ? "items-start pt-12 sm:pt-14" : "items-center",
+        )}
+      >
         <div
           className={cn(
             "flex w-full max-w-sm flex-col items-center rounded-lg border text-center shadow-sm backdrop-blur-[2px]",
@@ -198,6 +249,7 @@ export function ImagePlaceholder({
           </p>
         </div>
       </div>
+      )}
     </div>
   );
 }

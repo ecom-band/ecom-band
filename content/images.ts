@@ -14,6 +14,22 @@ import type { ImageSpec } from "@/components/blocks/ImagePlaceholder";
 /* ------------------------------------------------------------------ Home */
 
 export const homeImages = {
+  heroBackdrop: {
+    title: "Hero backdrop — fulfillment floor",
+    description:
+      "Very wide, dark, low-contrast shot of the operation (racking, conveyors, parcels) shot from a distance. It sits BEHIND the headline and conveyor at low opacity — atmosphere, not a subject. Avoid faces and text.",
+    aspect: "21/9",
+    minSize: "2400 × 1030",
+    format: "JPG/WebP · dark, moody",
+  },
+  whatWeDo: {
+    title: "Team on the operations floor",
+    description:
+      "Two or three team members mid-task — one at a laptop, one with a scanner or carton. Warm light. The ops console card overlaps its bottom-right, so keep the subject upper-left.",
+    aspect: "4/5",
+    minSize: "1200 × 1500",
+    format: "JPG/WebP",
+  },
   operations: {
     title: "Fulfillment floor in motion",
     description:
