@@ -30,7 +30,7 @@ import { featuredFaqs } from "@/content/faq";
 import { platforms } from "@/content/site";
 import { platformAccent } from "@/lib/platform";
 import { PlatformLogo } from "@/components/brand/PlatformLogo";
-import { ImagePlaceholder } from "@/components/blocks/ImagePlaceholder";
+import Image from "next/image";
 import { homeImages } from "@/content/images";
 
 const whyPoints = [
@@ -114,11 +114,18 @@ export default function HomePage() {
               </ButtonLink>
             </div>
           </Reveal>
-          {/* IMG-0A — photo as the back card; the ops console floats over its lower-right */}
+          {/* photo as the back card; the ops console floats over its lower-right */}
           <Reveal delay={0.12} className="relative">
             <div className="relative mx-auto max-w-lg pt-0 pb-0 lg:mx-0 lg:ml-auto">
-              <div className="w-[80%] sm:w-[74%]">
-                <ImagePlaceholder spec={homeImages.whatWeDo} id="IMG-0A" align="top" />
+              <div className="w-[80%] overflow-hidden rounded-2xl border border-ink/10 shadow-[0_1px_2px_rgba(13,19,33,0.06),0_20px_40px_-20px_rgba(13,19,33,0.35)] sm:w-[74%]">
+                <Image
+                  src="/images/what-we-do.jpg"
+                  alt={homeImages.whatWeDo.title}
+                  width={928}
+                  height={1152}
+                  sizes="(min-width: 1024px) 40vw, 80vw"
+                  className="aspect-[4/5] h-auto w-full object-cover"
+                />
               </div>
               <div className="relative -mt-[16%] ml-auto w-[88%] sm:-mt-[34%] sm:w-[78%]">
                 <OperationsPanel />
@@ -254,9 +261,18 @@ export default function HomePage() {
       {/* 8 — Trust: the capabilities behind those dashboards */}
       <Section tone="paper">
         <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
-          {/* IMG-01 — the physical operation, tall, with the tickets docked to it */}
+          {/* the physical operation, tall, with the tickets docked to it */}
           <Reveal className="relative lg:order-2">
-            <ImagePlaceholder spec={homeImages.operations} id="IMG-01" />
+            <div className="overflow-hidden rounded-2xl border border-ink/10 shadow-[0_1px_2px_rgba(13,19,33,0.06),0_20px_40px_-20px_rgba(13,19,33,0.35)]">
+              <Image
+                src="/images/built-on-operations.jpg"
+                alt={homeImages.operations.title}
+                width={928}
+                height={1152}
+                sizes="(min-width: 1024px) 45vw, 90vw"
+                className="aspect-[4/5] h-auto w-full object-cover"
+              />
+            </div>
             <span
               aria-hidden
               className="absolute -right-3 top-10 hidden h-20 w-0.5 rounded-full bg-amber lg:block"
@@ -317,12 +333,14 @@ export default function HomePage() {
           </Reveal>
           <Reveal delay={0.1}>
             <div className="overflow-hidden rounded-xl border border-ink/8 bg-white shadow-[0_1px_2px_rgba(13,19,33,0.05)]">
-              {/* IMG-02 — a face for the support promise */}
-              <ImagePlaceholder
-                spec={homeImages.faqSupport}
-                id="IMG-02"
-                compact
-                className="rounded-none border-0 border-b-2"
+              {/* a face for the support promise */}
+              <Image
+                src="/images/faq-support.png"
+                alt={homeImages.faqSupport.title}
+                width={1590}
+                height={989}
+                sizes="(min-width: 1024px) 30vw, 90vw"
+                className="aspect-[16/10] h-auto w-full object-cover"
               />
               <div className="p-6 sm:p-7">
               <h3 className="type-display-sub text-lg">

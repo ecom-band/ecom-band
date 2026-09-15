@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { Check, Users, Info } from "lucide-react";
 import { PageHero } from "@/components/blocks/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -47,12 +48,24 @@ export default async function ServicePage({ params }: Props) {
         visual={
           images && (
             /* IMG-24… — service-specific hero visual, dark frame */
-            <ImagePlaceholder
-              spec={images.hero}
-              id={`IMG-${imgBase}`}
-              dark
-              className="shadow-2xl shadow-black/40"
-            />
+            images.hero.src ? (
+              <Image
+                src={images.hero.src}
+                alt={images.hero.title}
+                width={images.hero.width}
+                height={images.hero.height}
+                className="rounded-xl object-cover shadow-2xl shadow-black/40"
+                style={{ aspectRatio: images.hero.aspect }}
+                priority
+              />
+            ) : (
+              <ImagePlaceholder
+                spec={images.hero}
+                id={`IMG-${imgBase}`}
+                dark
+                className="shadow-2xl shadow-black/40"
+              />
+            )
           )
         }
       />
@@ -126,7 +139,18 @@ export default async function ServicePage({ params }: Props) {
         <Section tone="paper" className="pt-0! md:pt-0! lg:pt-0!">
           <Reveal>
             <figure className="relative">
-              <ImagePlaceholder spec={images.band} id={`IMG-${imgBase + 1}`} />
+              {images.band.src ? (
+                <Image
+                  src={images.band.src}
+                  alt={images.band.title}
+                  width={images.band.width}
+                  height={images.band.height}
+                  className="w-full rounded-xl object-cover"
+                  style={{ aspectRatio: images.band.aspect }}
+                />
+              ) : (
+                <ImagePlaceholder spec={images.band} id={`IMG-${imgBase + 1}`} />
+              )}
               <figcaption className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 border-t border-ink/10 pt-4 text-sm text-slate">
                 <span className="font-mono text-[0.6rem] font-semibold tracking-[0.2em] text-amber-deep uppercase">
                   {service.name} — in operation

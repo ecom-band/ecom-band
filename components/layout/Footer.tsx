@@ -46,7 +46,12 @@ function FooterColumn({
 
 export function Footer() {
   return (
-    <footer className="bg-ink text-paper">
+    <footer className="relative bg-ink text-paper">
+      {/* hairline between the final CTA and the footer — fades at the edges so it stays subtle at every width */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-ink-border to-transparent"
+      />
       <Container className="py-16 md:py-20">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">
           <div>

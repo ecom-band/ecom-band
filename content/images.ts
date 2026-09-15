@@ -50,7 +50,10 @@ export const homeImages = {
 
 /* ----------------------------------------------------------------- About */
 
-export const aboutImages = {
+export const aboutImages: Record<
+  string,
+  ImageSpec & { src?: string; width?: number; height?: number }
+> = {
   story: {
     title: "The ECOM BAND team",
     description:
@@ -58,6 +61,9 @@ export const aboutImages = {
     aspect: "4/5",
     minSize: "1200 × 1500",
     format: "JPG/WebP",
+    src: "/images/about/story.jpg",
+    width: 1856,
+    height: 2304,
   },
   storyDetail: {
     title: "Hands-on detail",
@@ -66,6 +72,9 @@ export const aboutImages = {
     aspect: "1/1",
     minSize: "800 × 800",
     format: "JPG/WebP",
+    src: "/images/about/story-detail.jpg",
+    width: 2048,
+    height: 2048,
   },
   galleryWarehouse: {
     title: "Warehouse & prep center",
@@ -74,6 +83,9 @@ export const aboutImages = {
     aspect: "4/3",
     minSize: "1600 × 1200",
     format: "JPG/WebP",
+    src: "/images/about/gallery-warehouse.jpg",
+    width: 2400,
+    height: 1792,
   },
   gallerySourcing: {
     title: "Sourcing & supplier review",
@@ -82,6 +94,9 @@ export const aboutImages = {
     aspect: "4/3",
     minSize: "1600 × 1200",
     format: "JPG/WebP",
+    src: "/images/about/gallery-sourcing.jpg",
+    width: 2400,
+    height: 1792,
   },
   galleryOps: {
     title: "Marketplace operations desk",
@@ -90,13 +105,20 @@ export const aboutImages = {
     aspect: "4/3",
     minSize: "1600 × 1200",
     format: "JPG/WebP",
+    src: "/images/about/gallery-ops.jpg",
+    width: 2400,
+    height: 1792,
   },
-} satisfies Record<string, ImageSpec>;
+};
 
 /* ---------------------------------------------------------- How it works */
 
 /** One image per station, in `processSteps` order. */
-export const stationImages: ImageSpec[] = [
+export const stationImages: (ImageSpec & {
+  src?: string;
+  width?: number;
+  height?: number;
+})[] = [
   {
     title: "Consultation call",
     description:
@@ -104,6 +126,9 @@ export const stationImages: ImageSpec[] = [
     aspect: "16/10",
     minSize: "1200 × 750",
     format: "JPG/WebP",
+    src: "/images/how-it-works/station-1.jpg",
+    width: 2624,
+    height: 1632,
   },
   {
     title: "Strategy whiteboard",
@@ -112,6 +137,9 @@ export const stationImages: ImageSpec[] = [
     aspect: "16/10",
     minSize: "1200 × 750",
     format: "JPG/WebP",
+    src: "/images/how-it-works/station-2.jpg",
+    width: 2624,
+    height: 1632,
   },
   {
     title: "Launch: listings & first inventory",
@@ -120,6 +148,9 @@ export const stationImages: ImageSpec[] = [
     aspect: "16/10",
     minSize: "1200 × 750",
     format: "JPG/WebP",
+    src: "/images/how-it-works/station-3.jpg",
+    width: 2624,
+    height: 1632,
   },
   {
     title: "Daily operations",
@@ -128,6 +159,9 @@ export const stationImages: ImageSpec[] = [
     aspect: "16/10",
     minSize: "1200 × 750",
     format: "JPG/WebP",
+    src: "/images/how-it-works/station-4.jpg",
+    width: 2624,
+    height: 1632,
   },
   {
     title: "Scaling up",
@@ -136,12 +170,18 @@ export const stationImages: ImageSpec[] = [
     aspect: "16/10",
     minSize: "1200 × 750",
     format: "JPG/WebP",
+    src: "/images/how-it-works/station-5.jpg",
+    width: 2624,
+    height: 1632,
   },
 ];
 
 /* --------------------------------------------------------- Why ECOM BAND */
 
-export const whyImages = {
+export const whyImages: Record<
+  string,
+  ImageSpec & { src?: string; width?: number; height?: number }
+> = {
   behindTheScenes: {
     title: "Behind the marketplace account",
     description:
@@ -149,12 +189,18 @@ export const whyImages = {
     aspect: "4/3",
     minSize: "1600 × 1200",
     format: "JPG/WebP",
+    src: "/images/why-ecom-band/behind-the-scenes.jpg",
+    width: 2400,
+    height: 1792,
   },
-} satisfies Record<string, ImageSpec>;
+};
 
 /* -------------------------------------------------------------- Services */
 
-export const servicesImages = {
+export const servicesImages: Record<
+  string,
+  ImageSpec & { src?: string; width?: number; height?: number }
+> = {
   guidance: {
     title: "Choosing a model together",
     description:
@@ -162,8 +208,11 @@ export const servicesImages = {
     aspect: "4/3",
     minSize: "1600 × 1200",
     format: "JPG/WebP",
+    src: "/services/guidance.jpg",
+    width: 2324,
+    height: 1824,
   },
-} satisfies Record<string, ImageSpec>;
+};
 
 /**
  * Per-service imagery: `card` is the thumbnail on the Services grid,
@@ -172,7 +221,11 @@ export const servicesImages = {
  */
 export const serviceImages: Record<
   string,
-  { card: ImageSpec; hero: ImageSpec; band: ImageSpec }
+  {
+    card: ImageSpec & { src?: string; width?: number; height?: number };
+    hero: ImageSpec & { src?: string; width?: number; height?: number };
+    band: ImageSpec & { src?: string; width?: number; height?: number };
+  }
 > = {
   "amazon-fba-wholesale": {
     card: {
@@ -180,6 +233,9 @@ export const serviceImages: Record<
       description: "Labelled cartons on a pallet, FBA box labels visible.",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/amazon-fba-wholesale/card.jpg",
+      width: 2816,
+      height: 1536,
     },
     hero: {
       title: "Branded wholesale inventory",
@@ -188,6 +244,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/amazon-fba-wholesale/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "FBA prep line",
@@ -196,6 +255,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/amazon-fba-wholesale/band.jpg",
+      width: 1584,
+      height: 672,
     },
   },
   "amazon-fbm-wholesale": {
@@ -204,6 +266,9 @@ export const serviceImages: Record<
       description: "Packing station with printed Amazon shipping labels.",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/amazon-fbm-wholesale/card.jpg",
+      width: 2436,
+      height: 1728,
     },
     hero: {
       title: "In-house fulfillment",
@@ -212,6 +277,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/amazon-fbm-wholesale/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "Outbound parcels",
@@ -220,6 +288,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/amazon-fbm-wholesale/band.jpg",
+      width: 1584,
+      height: 672,
     },
   },
   "amazon-private-label": {
@@ -228,6 +299,9 @@ export const serviceImages: Record<
       description: "Clean product with custom branded packaging on a neutral background.",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/amazon-private-label/card.jpg",
+      width: 2370,
+      height: 1792,
     },
     hero: {
       title: "Brand development",
@@ -236,6 +310,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/amazon-private-label/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "From sample to shelf",
@@ -244,6 +321,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/amazon-private-label/band.jpg",
+      width: 1584,
+      height: 672,
     },
   },
   "amazon-account-reinstatement": {
@@ -252,6 +332,9 @@ export const serviceImages: Record<
       description: "Seller dashboard with account health section on screen (redacted).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/amazon-account-reinstatement/card.jpg",
+      width: 2270,
+      height: 1888,
     },
     hero: {
       title: "Compliance & appeal work",
@@ -260,6 +343,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/amazon-account-reinstatement/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "Back in good standing",
@@ -268,6 +354,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/amazon-account-reinstatement/band.jpg",
+      width: 1584,
+      height: 672,
     },
   },
   "shopify-private-label": {
@@ -276,6 +365,9 @@ export const serviceImages: Record<
       description: "Laptop showing a branded Shopify store home page (mock).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/shopify-private-label/card.jpg",
+      width: 2816,
+      height: 1536,
     },
     hero: {
       title: "Own-brand storefront",
@@ -284,6 +376,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/amazon-private-label/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "DTC order flow",
@@ -292,6 +387,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/amazon-private-label/band.jpg",
+      width: 1584,
+      height: 672,
     },
   },
   "shopify-dropshipping": {
@@ -300,6 +398,9 @@ export const serviceImages: Record<
       description: "Shopify admin orders view with supplier-fulfilled orders (mock).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/shopify-dropshipping/card.jpg",
+      width: 2372,
+      height: 1760,
     },
     hero: {
       title: "Supplier-fulfilled model",
@@ -308,6 +409,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/shopify-dropshipping/hero.jpg",
+      width: 1152,
+      height: 928,
     },
     band: {
       title: "Store, orders, suppliers",
@@ -316,6 +420,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/shopify-dropshipping/band.jpg",
+      width: 3168,
+      height: 1344,
     },
   },
   "walmart-wholesale": {
@@ -324,6 +431,9 @@ export const serviceImages: Record<
       description: "Walmart Seller Center dashboard on screen (redacted).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/walmart-wholesale/card.jpg",
+      width: 2816,
+      height: 1536,
     },
     hero: {
       title: "Second-marketplace expansion",
@@ -332,6 +442,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/walmart-wholesale/hero.jpg",
+      width: 2304,
+      height: 1856,
     },
     band: {
       title: "Multi-channel inventory",
@@ -340,6 +453,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/walmart-wholesale/band.jpg",
+      width: 3168,
+      height: 1344,
     },
   },
   "ebay-wholesale": {
@@ -348,6 +464,9 @@ export const serviceImages: Record<
       description: "eBay Seller Hub listings view on screen (redacted).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/ebay-wholesale/card.jpg",
+      width: 2816,
+      height: 1536,
     },
     hero: {
       title: "eBay wholesale operations",
@@ -356,6 +475,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/ebay-wholesale/hero.jpg",
+      width: 2304,
+      height: 1856,
     },
     band: {
       title: "Listing to shipment",
@@ -364,6 +486,9 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/ebay-wholesale/band.jpg",
+      width: 3168,
+      height: 1344,
     },
   },
   "tiktok-shop": {
@@ -372,6 +497,9 @@ export const serviceImages: Record<
       description: "Phone on a tripod filming a product; TikTok Shop UI on screen (mock).",
       aspect: "16/10",
       minSize: "800 × 500",
+      src: "/services/tiktok-shop/card.jpg",
+      width: 2816,
+      height: 1536,
     },
     hero: {
       title: "Content-led commerce",
@@ -380,6 +508,9 @@ export const serviceImages: Record<
       aspect: "5/4",
       minSize: "1400 × 1120",
       format: "JPG/WebP",
+      src: "/services/tiktok-shop/hero.jpg",
+      width: 2304,
+      height: 1856,
     },
     band: {
       title: "Studio to shipment",
@@ -388,13 +519,19 @@ export const serviceImages: Record<
       aspect: "21/9",
       minSize: "2100 × 900",
       format: "JPG/WebP",
+      src: "/services/tiktok-shop/band.jpg",
+      width: 3168,
+      height: 1344,
     },
   },
 };
 
 /* --------------------------------------------------------------- Contact */
 
-export const contactImages = {
+export const contactImages: Record<
+  string,
+  ImageSpec & { src?: string; width?: number; height?: number }
+> = {
   office: {
     title: "Office / team at work",
     description:
@@ -402,5 +539,8 @@ export const contactImages = {
     aspect: "4/3",
     minSize: "1200 × 900",
     format: "JPG/WebP",
+    src: "/images/contact/office.jpg",
+    width: 2400,
+    height: 1792,
   },
-} satisfies Record<string, ImageSpec>;
+};

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   Focus,
   Layers,
@@ -125,7 +126,17 @@ export default function WhyEcomBandPage() {
             </Reveal>
             {/* IMG-13 — the physical operation under the storefront */}
             <Reveal delay={0.1} className="mt-10">
-              <ImagePlaceholder spec={whyImages.behindTheScenes} id="IMG-13" />
+              {whyImages.behindTheScenes.src ? (
+                <Image
+                  src={whyImages.behindTheScenes.src}
+                  alt={whyImages.behindTheScenes.title}
+                  width={whyImages.behindTheScenes.width}
+                  height={whyImages.behindTheScenes.height}
+                  className="aspect-[4/3] w-full rounded-xl object-cover"
+                />
+              ) : (
+                <ImagePlaceholder spec={whyImages.behindTheScenes} id="IMG-13" />
+              )}
             </Reveal>
           </div>
           <div className="relative">

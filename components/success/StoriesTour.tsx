@@ -98,7 +98,6 @@ export function StoriesTour() {
       {chapters.map((c, ci) => {
         const chapter = platformChapters[c.platform];
         const related = services.filter((s) => s.platform === c.platform);
-        const models = [...new Set(c.stories.map((s) => s.model))];
         return (
           <section
             key={c.platform}
@@ -136,21 +135,13 @@ export function StoriesTour() {
                 </Reveal>
                 <Reveal delay={0.08}>
                   <p className="leading-relaxed text-slate">{chapter.blurb}</p>
-                  <dl className="mt-6 grid grid-cols-2 gap-6 border-t border-ink/10 pt-5">
-                    <div>
-                      <dt className="font-mono text-[0.6rem] tracking-[0.2em] text-slate uppercase">
-                        Dashboards
-                      </dt>
-                      <dd className="type-display-sub mt-1 text-2xl tabular-nums">
-                        {String(c.stories.length).padStart(2, "0")}
-                      </dd>
-                    </div>
-                    <div>
-                      <dt className="font-mono text-[0.6rem] tracking-[0.2em] text-slate uppercase">
-                        Models shown
-                      </dt>
-                      <dd className="mt-1.5 text-sm text-ink/80">{models.join(" · ")}</dd>
-                    </div>
+                  <dl className="mt-6 border-t border-ink/10 pt-5">
+                    <dt className="font-mono text-[0.6rem] tracking-[0.2em] text-slate uppercase">
+                      Dashboards
+                    </dt>
+                    <dd className="type-display-sub mt-1 text-2xl tabular-nums">
+                      {String(c.stories.length).padStart(2, "0")}
+                    </dd>
                   </dl>
                   {related.length > 0 && (
                     <ul className="mt-5 flex flex-wrap gap-2">

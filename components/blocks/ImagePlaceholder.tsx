@@ -151,7 +151,7 @@ export function ImagePlaceholder({
       {minimal && (
         <div
           className={cn(
-            "absolute right-4 bottom-4 max-w-xs rounded-lg border px-3.5 py-2.5 text-left backdrop-blur-[2px] sm:right-6 sm:bottom-6",
+            "absolute right-4 bottom-4 hidden max-w-xs rounded-lg border px-3.5 py-2.5 text-left backdrop-blur-[2px] sm:right-6 sm:bottom-6 md:block",
             dark ? "border-amber/30 bg-ink/80" : "border-amber/50 bg-paper/92",
           )}
         >

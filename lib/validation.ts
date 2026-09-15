@@ -8,7 +8,11 @@ export const contactSchema = z.object({
   name: z.string().trim().min(2, "Please enter your full name.").max(120),
   company: z.string().trim().max(160).optional().or(z.literal("")),
   email: z.email("Please enter a valid email address.").max(200),
-  phone: z.string().trim().max(40).optional().or(z.literal("")),
+  phone: z
+    .string()
+    .trim()
+    .min(1, "Please enter your phone number.")
+    .max(40),
   service: z
     .string()
     .refine((v) => serviceOptions.includes(v), "Please select a service."),

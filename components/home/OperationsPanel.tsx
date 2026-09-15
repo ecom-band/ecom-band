@@ -76,10 +76,10 @@ export function OperationsPanel() {
                     />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block truncate text-sm font-semibold text-paper/95">
+                    <span className="block text-sm font-semibold text-paper/95">
                       {p}
                     </span>
-                    <span className="mt-0.5 block truncate font-mono text-[0.58rem] tracking-[0.14em] text-slate-light uppercase">
+                    <span className="mt-0.5 block font-mono text-[0.58rem] tracking-[0.14em] text-slate-light uppercase">
                       {CHANNEL_STATES[i]}
                     </span>
                   </span>
@@ -103,16 +103,19 @@ export function OperationsPanel() {
             })}
           </ul>
 
-          {/* the pipeline — one lit segment traveling through the operation */}
-          <div className="mt-6 border-t border-ink-border pt-5">
-            <div className="grid grid-cols-6 gap-1.5">
+          {/* the pipeline — one lit segment traveling through the operation.
+              Six across when the console is wide enough for the longest
+              label, otherwise two balanced rows of three (container query) —
+              labels never truncate at any viewport. */}
+          <div className="mt-6 @container border-t border-ink-border pt-5">
+            <div className="grid grid-cols-3 gap-x-2 gap-y-3 @[27rem]:grid-cols-6">
               {PIPELINE.map((stage, i) => (
                 <div key={stage} className="min-w-0">
                   <span
                     className="seg block h-[3px] rounded-full bg-amber"
                     style={{ animationDelay: `${i * 1.2}s` }}
                   />
-                  <span className="mt-1.5 block truncate text-center font-mono text-[0.5rem] tracking-[0.08em] text-slate-light/80 uppercase">
+                  <span className="mt-1.5 block text-center whitespace-nowrap font-mono text-[0.5rem] tracking-[0.08em] text-slate-light/80 uppercase">
                     {stage}
                   </span>
                 </div>

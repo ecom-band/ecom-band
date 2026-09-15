@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { PageHero } from "@/components/blocks/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -37,7 +38,17 @@ export default function ContactPage() {
 
           <Reveal delay={0.1} className="space-y-5">
             {/* IMG-42 — the people you'll be talking to */}
-            <ImagePlaceholder spec={contactImages.office} id="IMG-42" />
+            {contactImages.office.src ? (
+              <Image
+                src={contactImages.office.src}
+                alt={contactImages.office.title}
+                width={contactImages.office.width}
+                height={contactImages.office.height}
+                className="aspect-[4/3] w-full rounded-xl object-cover"
+              />
+            ) : (
+              <ImagePlaceholder spec={contactImages.office} id="IMG-42" />
+            )}
             <div className="rounded-xl border border-ink/10 bg-white/60 p-5 min-[400px]:p-7 sm:p-8">
               <Eyebrow>Contact Information</Eyebrow>
               <ul className="mt-2 space-y-5">
@@ -58,7 +69,7 @@ export default function ContactPage() {
                     <Phone aria-hidden className="mt-0.5 size-4.5 text-amber-deep" />
                     <div>
                       <p className="text-sm font-semibold text-ink">
-                        Phone / WhatsApp
+                        Phone
                       </p>
                       <p className="text-sm text-slate">{site.phone.value}</p>
                     </div>

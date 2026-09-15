@@ -31,7 +31,7 @@ export const site: {
     "ECOM BAND is an e-commerce growth and management company helping entrepreneurs and businesses build, operate, and grow profitable online businesses across Amazon, Shopify, Walmart, eBay, and TikTok Shop.",
   footerTagline:
     "ECOM BAND helps businesses build, manage, and scale e-commerce operations across Amazon, Shopify, Walmart, eBay, and TikTok Shop.",
-  email: "info@ecomband.com",
+  email: "inquiry@ecomband.com",
   linkedin: "https://www.linkedin.com/company/ecomband/",
   businessHours: "Monday – Saturday",
 

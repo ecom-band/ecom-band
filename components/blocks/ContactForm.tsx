@@ -145,9 +145,8 @@ export function ContactForm() {
           />
         </Field>
         <Field
-          label="Phone / WhatsApp"
+          label="Phone"
           htmlFor="phone"
-          optional
           error={errors.phone?.message}
         >
           <input

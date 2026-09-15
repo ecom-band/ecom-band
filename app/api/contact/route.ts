@@ -6,14 +6,14 @@ import { site } from "@/content/site";
 /**
  * Contact form endpoint.
  * Validates with the shared zod schema, drops spam (honeypot + time trap),
- * and emails the inquiry to info@ecomband.com via Resend.
+ * and emails the inquiry to inquiry@ecomband.com via Resend.
  *
  * The payload is a flat JSON object — wire a CRM here later (webhook or
  * SDK call) without touching the form UI.
  *
  * Env:
  *   RESEND_API_KEY  — required in production
- *   CONTACT_TO      — defaults to info@ecomband.com
+ *   CONTACT_TO      — defaults to inquiry@ecomband.com
  *   CONTACT_FROM    — a sender on a Resend-verified domain
  */
 export async function POST(request: Request) {
@@ -52,7 +52,7 @@ export async function POST(request: Request) {
     `Name: ${data.name}`,
     `Company: ${data.company || "—"}`,
     `Email: ${data.email}`,
-    `Phone / WhatsApp: ${data.phone || "—"}`,
+    `Phone: ${data.phone}`,
     `Service Interested In: ${data.service}`,
     "",
     "Message / Business Goals:",

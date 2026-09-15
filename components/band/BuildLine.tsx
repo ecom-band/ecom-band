@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import {
   motion,
   useMotionValueEvent,
@@ -213,12 +214,22 @@ export function BuildLine() {
                   <div className="grid gap-7 px-5 py-6 sm:px-7 sm:py-7 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
                     <div>
                       {/* IMG-08…12 — one environmental shot per station */}
-                      <ImagePlaceholder
-                        spec={stationImages[i]}
-                        id={`IMG-${String(8 + i).padStart(2, "0")}`}
-                        compact
-                        className="mb-6"
-                      />
+                      {stationImages[i].src ? (
+                        <Image
+                          src={stationImages[i].src}
+                          alt={stationImages[i].title}
+                          width={stationImages[i].width}
+                          height={stationImages[i].height}
+                          className="mb-6 aspect-[16/10] w-full rounded-xl object-cover"
+                        />
+                      ) : (
+                        <ImagePlaceholder
+                          spec={stationImages[i]}
+                          id={`IMG-${String(8 + i).padStart(2, "0")}`}
+                          compact
+                          className="mb-6"
+                        />
+                      )}
                       <h2 className="type-display-sub text-xl min-[400px]:text-2xl sm:text-[1.65rem]">
                         {step.heading}
                       </h2>

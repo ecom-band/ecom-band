@@ -9,119 +9,152 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalPage title="Terms & Conditions" updated="August 24, 2026">
+    <LegalPage title="Terms & Conditions" updated="September 16, 2026">
       <section>
-        <h2>1. Agreement to Terms</h2>
+        <h2>1. Acceptance of Terms</h2>
         <p>
-          These Terms &amp; Conditions (&quot;Terms&quot;) govern your use of{" "}
-          {site.domain} (the &quot;Site&quot;), operated by {site.legalName}{" "}
-          (&quot;{site.name}&quot;, &quot;we&quot;, &quot;us&quot;, or
-          &quot;our&quot;). By accessing or using the Site, you agree to be
-          bound by these Terms. If you do not agree, please do not use the
-          Site.
+          Welcome to {site.name} (&quot;Company&quot;, &quot;we&quot;,
+          &quot;our&quot;, or &quot;us&quot;). These Terms and Conditions
+          (&quot;Terms&quot;) govern your access to and use of our website
+          located at {site.domain} (the &quot;Site&quot;). By accessing or
+          using the Site, you agree to be bound by these Terms and our
+          Privacy Policy. If you do not agree to these Terms, please do not
+          use our Site.
         </p>
       </section>
 
       <section>
-        <h2>2. About the Site</h2>
+        <h2>2. Purpose of the Website</h2>
         <p>
-          The Site provides information about {site.name}&apos;s e-commerce
-          services, including marketplace management, wholesale sourcing,
-          private label development, and related operational support. The Site
-          content is for general information only and does not constitute
-          business, financial, investment, or legal advice.
+          The Site is intended for informational and business-to-business
+          purposes, specifically to provide prospective investors, partners,
+          and corporate clients with information regarding our branded
+          wholesale operations on Amazon and Walmart.
         </p>
       </section>
 
       <section>
-        <h2>3. No Guarantees of Results</h2>
+        <h2>3. No Financial Advice or Offer of Securities</h2>
         <p>
-          E-commerce involves commercial risk. Information on the Site about
-          our services does not constitute a promise or guarantee of revenue,
-          profit, business performance, or any specific outcome. Any
-          engagement with {site.name} is governed by a separate written
-          service agreement, which defines the scope, fees, and terms of the
-          services provided.
+          <strong>3.1 Informational Purposes Only:</strong> All content,
+          materials, dashboards, financial projections, and data provided on
+          this Site are for informational purposes only. Nothing on this Site
+          constitutes financial, legal, tax, or investment advice.
         </p>
         <p>
-          For Amazon Account Reinstatement services specifically: Amazon makes
-          the final decision on account reinstatement. {site.name} provides
-          professional analysis, documentation support, and appeal preparation
-          but does not guarantee Amazon&apos;s decision.
+          <strong>3.2 No Offer to Sell:</strong> The information provided on
+          the Site does not constitute an offer to sell, a solicitation of an
+          offer to buy, or a recommendation for any security or investment
+          opportunity. Any formal investment opportunity will only be offered
+          through definitive confidential offering documents and agreements.
+        </p>
+        <p>
+          <strong>3.3 Forward-Looking Statements:</strong> The Site may
+          contain forward-looking statements regarding our business
+          projections, anticipated growth, or financial goals. These
+          statements involve risks and uncertainties, and actual results may
+          differ materially. You should not place undue reliance on any
+          forward-looking statements.
         </p>
       </section>
 
       <section>
-        <h2>4. Use of the Site</h2>
-        <p>You agree not to:</p>
+        <h2>4. Intellectual Property Rights</h2>
+        <p>
+          All content on the Site—including but not limited to text,
+          graphics, logos, wordmarks, dashboard mockups, images, software, and
+          the compilation thereof—is the property of {site.name} or its
+          licensors and is protected by copyright, trademark, and other
+          intellectual property laws. You may not reproduce, distribute,
+          modify, or create derivative works of any material from the Site
+          without our express written consent.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. User Conduct</h2>
+        <p>By using the Site, you agree not to:</p>
         <ul>
-          <li>Use the Site in any way that violates applicable law</li>
-          <li>Attempt to gain unauthorized access to the Site or its systems</li>
-          <li>Interfere with the Site&apos;s operation or security</li>
-          <li>Submit false or misleading information through our forms</li>
-          <li>Scrape, copy, or reproduce Site content for commercial use without permission</li>
+          <li>Use the Site for any unlawful purpose or in violation of any local, state, national, or international law</li>
+          <li>Attempt to gain unauthorized access to any secure portions of the Site, our servers, or any associated databases</li>
+          <li>Use any robot, spider, scraper, or other automated means to access the Site and extract data</li>
+          <li>Misrepresent your identity, affiliation, or professional credentials when contacting us or requesting investment materials</li>
         </ul>
       </section>
 
       <section>
-        <h2>5. Intellectual Property</h2>
+        <h2>6. Confidentiality</h2>
         <p>
-          The Site and its content — including text, design, graphics, and
-          branding — are owned by {site.legalName} or its licensors and are
-          protected by applicable intellectual property laws. Third-party
-          platform names (such as Amazon, Shopify, Walmart, eBay, and TikTok
-          Shop) are trademarks of their respective owners; their use on the
-          Site is for identification only and does not imply endorsement or
-          affiliation.
+          Certain areas of the Site may require access credentials to view
+          proprietary business information, pitch decks, or detailed
+          financial dashboards. If you are granted access to these secure
+          areas, you agree to maintain the confidentiality of all non-public
+          information provided to you and not to share this information with
+          unauthorized third parties without our prior written consent.
         </p>
       </section>
 
       <section>
-        <h2>6. Third-Party Links &amp; Platforms</h2>
+        <h2>7. Third-Party Links</h2>
         <p>
-          The Site may link to third-party websites or reference third-party
-          marketplaces. We are not responsible for the content, policies, or
-          practices of any third party, and working with any marketplace is
-          subject to that marketplace&apos;s own terms and policies.
+          The Site may contain links to third-party websites or services that
+          are not owned or controlled by {site.name}. We have no control
+          over, and assume no responsibility for, the content, privacy
+          policies, or practices of any third-party websites. Accessing these
+          links is at your own risk.
         </p>
       </section>
 
       <section>
-        <h2>7. Disclaimer of Warranties</h2>
+        <h2>8. Disclaimer of Warranties</h2>
         <p>
-          The Site is provided on an &quot;as is&quot; and &quot;as
-          available&quot; basis, without warranties of any kind, express or
-          implied, including warranties of merchantability, fitness for a
-          particular purpose, and non-infringement. We do not warrant that the
-          Site will be uninterrupted, error-free, or free of harmful
-          components.
+          The Site and all information contained herein are provided on an
+          &quot;as-is&quot; and &quot;as-available&quot; basis. {site.name}{" "}
+          makes no representations or warranties of any kind, express or
+          implied, as to the operation of the Site or the accuracy,
+          completeness, or reliability of the information, content, or
+          materials included.
         </p>
       </section>
 
       <section>
-        <h2>8. Limitation of Liability</h2>
+        <h2>9. Limitation of Liability</h2>
         <p>
-          To the maximum extent permitted by law, {site.legalName} shall not
-          be liable for any indirect, incidental, special, consequential, or
-          punitive damages arising from your use of the Site. Nothing in these
-          Terms limits liability that cannot be limited under applicable law.
+          To the fullest extent permitted by applicable law, in no event
+          shall {site.name}, its directors, employees, or agents be liable
+          for any direct, indirect, incidental, consequential, or punitive
+          damages arising out of or related to your use of, or inability to
+          use, the Site or any information provided therein.
         </p>
       </section>
 
       <section>
-        <h2>9. Changes to These Terms</h2>
+        <h2>10. Governing Law</h2>
         <p>
-          We may update these Terms from time to time. Changes take effect
-          when posted on this page. Your continued use of the Site after
-          changes are posted constitutes acceptance of the updated Terms.
+          These Terms shall be governed by and construed in accordance with
+          the laws of the United States, without regard to its conflict of
+          law provisions. Any legal action or proceeding related to the Site
+          shall be brought exclusively in the courts located in the United
+          States.
         </p>
       </section>
 
       <section>
-        <h2>10. Contact</h2>
+        <h2>11. Changes to These Terms</h2>
         <p>
-          Questions about these Terms can be sent to{" "}
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
+          We reserve the right to modify or replace these Terms at any time
+          at our sole discretion. Any changes will be effective immediately
+          upon posting to the Site. Your continued use of the Site following
+          the posting of revised Terms constitutes your acceptance of such
+          changes.
+        </p>
+      </section>
+
+      <section>
+        <h2>12. Contact Information</h2>
+        <p>For any questions regarding these Terms, please contact us at:</p>
+        <p>
+          Email: <a href={`mailto:${site.email}`}>{site.email}</a>
         </p>
       </section>
     </LegalPage>

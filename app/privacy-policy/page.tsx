@@ -9,127 +9,133 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <LegalPage title="Privacy Policy" updated="August 24, 2026">
+    <LegalPage title="Privacy Policy" updated="September 16, 2026">
       <section>
         <h2>1. Introduction</h2>
         <p>
-          This Privacy Policy describes how {site.legalName} (&quot;
-          {site.name}&quot;, &quot;we&quot;, &quot;us&quot;, or
-          &quot;our&quot;) collects, uses, and protects information when you
-          visit {site.domain} (the &quot;Site&quot;) or contact us about our
-          services. By using the Site, you agree to the practices described in
-          this policy.
+          Welcome to {site.name} (&quot;we&quot;, &quot;our&quot;, or
+          &quot;us&quot;). We are committed to protecting your privacy and
+          ensuring that your personal information is handled securely. This
+          Privacy Policy explains how we collect, use, and protect information
+          when you visit our website at {site.domain} (the &quot;Site&quot;)
+          or engage with us regarding potential investment and partnership
+          opportunities.
         </p>
       </section>
 
       <section>
         <h2>2. Information We Collect</h2>
-        <h3>Information you provide</h3>
         <p>
-          When you submit our contact form or email us, we collect the
-          information you choose to share, such as your name, company name,
-          email address, phone or WhatsApp number, the service you are
-          interested in, and your message.
+          Because our platform is designed for investor onboarding and
+          business partnerships, we may collect the following types of
+          information:
         </p>
-        <h3>Information collected automatically</h3>
+        <h3>Information You Provide to Us</h3>
         <p>
-          With your consent, we use analytics tools (such as Google Analytics)
-          that collect information about how visitors use the Site, including
-          pages visited, approximate location, device and browser type, and
-          referring pages. This information is aggregated and does not
-          directly identify you.
+          When you fill out contact forms, request a pitch deck, or
+          communicate with our team, we collect personal and professional
+          information. This may include your name, email address, phone
+          number, company or firm name, and any details regarding your
+          investment interests.
+        </p>
+        <h3>Automatically Collected Information</h3>
+        <p>
+          When you visit our Site, we automatically collect certain technical
+          data. This includes your IP address, browser type, operating
+          system, pages viewed, and the dates/times of your visits. This helps
+          us understand how visitors interact with our platform.
         </p>
       </section>
 
       <section>
         <h2>3. How We Use Your Information</h2>
+        <p>We use the information we collect for the following business purposes:</p>
         <ul>
-          <li>To respond to your inquiries and provide requested information about our services</li>
-          <li>To communicate with you about consultations and engagements</li>
-          <li>To understand how the Site is used and improve its content and performance</li>
-          <li>To comply with legal obligations</li>
+          <li>To respond to your inquiries and facilitate discussions regarding investment opportunities</li>
+          <li>To provide you with requested materials, such as operational dashboards, financial projections, or company presentations</li>
+          <li>To maintain and improve the security, functionality, and performance of our website</li>
+          <li>To comply with applicable legal obligations and resolve any disputes</li>
         </ul>
+      </section>
+
+      <section>
+        <h2>4. How We Share Your Information</h2>
         <p>
-          We do not sell your personal information, and we do not share it
-          with third parties for their own marketing purposes.
+          We understand that investor confidentiality is paramount. We do not
+          sell, rent, or trade your personal or professional information to
+          third parties. We only share your data in the following limited
+          circumstances:
+        </p>
+        <ul>
+          <li>
+            <strong>Service Providers:</strong> We may share information with
+            trusted third-party vendors who assist us in operating our
+            website, managing communications (such as our secure email and
+            phone systems), or analyzing site traffic. These providers are
+            bound by strict confidentiality agreements.
+          </li>
+          <li>
+            <strong>Legal Requirements:</strong> We may disclose your
+            information if required to do so by law or in response to valid
+            requests by public authorities.
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Data Security</h2>
+        <p>
+          We implement appropriate technical and organizational security
+          measures to protect your information against unauthorized access,
+          alteration, disclosure, or destruction. However, please note that no
+          method of transmission over the internet or electronic storage is
+          100% secure.
         </p>
       </section>
 
       <section>
-        <h2>4. Cookies &amp; Analytics</h2>
+        <h2>6. Cookies and Tracking Technologies</h2>
         <p>
-          The Site uses cookies for analytics only after you accept them
-          through our cookie banner. You can decline analytics cookies without
-          affecting your ability to use the Site, and you can clear cookies at
-          any time through your browser settings.
+          Our Site uses cookies and similar tracking technologies to enhance
+          user experience and analyze site traffic. You can instruct your
+          browser to refuse all cookies or to indicate when a cookie is being
+          sent. However, if you do not accept cookies, some portions of our
+          Site may not function properly.
         </p>
       </section>
 
       <section>
-        <h2>5. How We Share Information</h2>
+        <h2>7. Your Data Rights</h2>
         <p>
-          We share information only with service providers who help us operate
-          the Site and respond to inquiries (such as website hosting and email
-          delivery providers), and only to the extent necessary for those
-          purposes. These providers are obligated to protect your information.
-          We may also disclose information if required by law.
+          Depending on your location, you may have certain rights regarding
+          your personal information, including the right to:
+        </p>
+        <ul>
+          <li>Request access to the personal data we hold about you</li>
+          <li>Request that we correct or update inaccuracies in your information</li>
+          <li>Request the deletion of your personal data from our systems</li>
+        </ul>
+        <p>To exercise these rights, please contact us using the information provided below.</p>
+      </section>
+
+      <section>
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>
+          We may update this Privacy Policy from time to time to reflect
+          changes in our practices or for other operational, legal, or
+          regulatory reasons. We will post the updated policy on this page
+          and revise the &quot;Effective Date&quot; at the top.
         </p>
       </section>
 
       <section>
-        <h2>6. Data Retention</h2>
+        <h2>9. Contact Us</h2>
         <p>
-          We retain inquiry information for as long as needed to respond to
-          and manage your inquiry, maintain our business records, and comply
-          with legal obligations. You may request deletion of your information
-          at any time (see Section 8).
+          If you have any questions, concerns, or requests regarding this
+          Privacy Policy or our data practices, please contact us at:
         </p>
-      </section>
-
-      <section>
-        <h2>7. Data Security</h2>
         <p>
-          We use reasonable technical and organizational measures to protect
-          your information, including encrypted connections (HTTPS) across the
-          Site. No method of transmission or storage is completely secure, and
-          we cannot guarantee absolute security.
-        </p>
-      </section>
-
-      <section>
-        <h2>8. Your Rights</h2>
-        <p>
-          Depending on where you live, you may have rights to access, correct,
-          or delete personal information we hold about you, or to object to or
-          restrict certain processing. To exercise any of these rights,
-          contact us at <a href={`mailto:${site.email}`}>{site.email}</a>. We
-          will respond within the timeframe required by applicable law.
-        </p>
-      </section>
-
-      <section>
-        <h2>9. Children&apos;s Privacy</h2>
-        <p>
-          The Site is intended for business audiences and is not directed at
-          children under 16. We do not knowingly collect personal information
-          from children.
-        </p>
-      </section>
-
-      <section>
-        <h2>10. Changes to This Policy</h2>
-        <p>
-          We may update this Privacy Policy from time to time. Changes take
-          effect when posted on this page, and the &quot;Last updated&quot;
-          date will be revised accordingly.
-        </p>
-      </section>
-
-      <section>
-        <h2>11. Contact</h2>
-        <p>
-          Questions about this policy or your information can be sent to{" "}
-          <a href={`mailto:${site.email}`}>{site.email}</a>.
+          Email: <a href={`mailto:${site.email}`}>{site.email}</a>
         </p>
       </section>
     </LegalPage>

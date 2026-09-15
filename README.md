@@ -10,7 +10,7 @@ requirements in [`business-info-and-requirements/`](../business-info-and-require
 - **Tailwind CSS v4** — design tokens in [`app/globals.css`](app/globals.css)
 - **Motion** (Framer Motion) — hero sequence, scroll reveals; respects reduced motion
 - **React Hook Form + Zod** — contact form validation (shared client/server)
-- **Resend** — contact form email delivery to info@ecomband.com
+- **Resend** — contact form email delivery to inquiry@ecomband.com
 
 ## Develop
 
@@ -25,7 +25,7 @@ npm run dev
 | Variable | Purpose |
 | --- | --- |
 | `RESEND_API_KEY` | Required in production for the contact form |
-| `CONTACT_TO` | Inquiry recipient (default `info@ecomband.com`) |
+| `CONTACT_TO` | Inquiry recipient (default `inquiry@ecomband.com`) |
 | `CONTACT_FROM` | Sender on a Resend-verified domain, e.g. `ECOM BAND <website@ecomband.com>` |
 | `NEXT_PUBLIC_GA_ID` | GA4 measurement ID — loads only after cookie consent |
 
@@ -64,5 +64,5 @@ To swap in the official logo: replace [`components/layout/Logo.tsx`](components/
 - [ ] Social profiles confirmed (LinkedIn already live)
 - [ ] Brand colors confirmed against official logo (tokens in `app/globals.css`)
 - [ ] Legal pages reviewed by counsel (`/privacy-policy`, `/terms`)
-- [ ] `RESEND_API_KEY` set and test inquiry delivered to info@ecomband.com
+- [ ] `RESEND_API_KEY` set and test inquiry delivered to inquiry@ecomband.com
 - [ ] GA4 property created, `NEXT_PUBLIC_GA_ID` set, `generate_lead` event verified

@@ -48,13 +48,16 @@ function TicketRow() {
 
 export function OpsBand({ className }: { className?: string }) {
   return (
-    <div aria-hidden className={cn("relative select-none", className)}>
-      {/* the rail */}
-      <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-ink-border to-transparent" />
-      <div className="relative overflow-hidden py-3 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
-        <div className="band-marquee flex w-max animate-band-flow">
-          <TicketRow />
-          <TicketRow />
+    <div aria-hidden className={cn("select-none", className)}>
+      {/* rail + ticket row share this box, so the rail's top-1/2 centers on
+          the row itself rather than on whatever spacing `className` adds */}
+      <div className="relative">
+        <div className="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-ink-border to-transparent" />
+        <div className="relative overflow-hidden py-3 [mask-image:linear-gradient(to_right,transparent,black_12%,black_88%,transparent)]">
+          <div className="band-marquee flex w-max animate-band-flow">
+            <TicketRow />
+            <TicketRow />
+          </div>
         </div>
       </div>
     </div>

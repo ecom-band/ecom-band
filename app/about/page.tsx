@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Anchor, BadgeCheck, Clock, RefreshCw } from "lucide-react";
 import { PageHero } from "@/components/blocks/PageHero";
 import { Section } from "@/components/ui/Section";
@@ -96,13 +97,33 @@ export default function AboutPage() {
           {/* IMG-03 + IMG-04 — team portrait with an offset detail inset */}
           <Reveal delay={0.12} className="relative">
             <div className="relative mx-auto max-w-md pr-8 pb-10 sm:pr-12 sm:pb-12 lg:mx-0 lg:ml-auto">
-              <ImagePlaceholder spec={aboutImages.story} id="IMG-03" />
-              <div className="absolute right-0 bottom-0 w-[46%] rounded-xl bg-paper p-1.5 shadow-xl shadow-ink/15">
-                <ImagePlaceholder
-                  spec={aboutImages.storyDetail}
-                  id="IMG-04"
-                  compact
+              {aboutImages.story.src ? (
+                <Image
+                  src={aboutImages.story.src}
+                  alt={aboutImages.story.title}
+                  width={aboutImages.story.width}
+                  height={aboutImages.story.height}
+                  className="aspect-[4/5] w-full rounded-xl object-cover"
                 />
+              ) : (
+                <ImagePlaceholder spec={aboutImages.story} id="IMG-03" />
+              )}
+              <div className="absolute right-0 bottom-0 w-[46%] rounded-xl bg-paper p-1.5 shadow-xl shadow-ink/15">
+                {aboutImages.storyDetail.src ? (
+                  <Image
+                    src={aboutImages.storyDetail.src}
+                    alt={aboutImages.storyDetail.title}
+                    width={aboutImages.storyDetail.width}
+                    height={aboutImages.storyDetail.height}
+                    className="aspect-square w-full rounded-lg object-cover"
+                  />
+                ) : (
+                  <ImagePlaceholder
+                    spec={aboutImages.storyDetail}
+                    id="IMG-04"
+                    compact
+                  />
+                )}
               </div>
               <span
                 aria-hidden
@@ -129,7 +150,17 @@ export default function AboutPage() {
             <li key={g.id} className={i === 2 ? "sm:col-span-2 lg:col-span-1" : ""}>
               <Reveal delay={i * 0.07}>
                 <figure>
-                  <ImagePlaceholder spec={g.spec} id={g.id} />
+                  {g.spec.src ? (
+                    <Image
+                      src={g.spec.src}
+                      alt={g.spec.title}
+                      width={g.spec.width}
+                      height={g.spec.height}
+                      className="aspect-[4/3] w-full rounded-xl object-cover"
+                    />
+                  ) : (
+                    <ImagePlaceholder spec={g.spec} id={g.id} />
+                  )}
                   <figcaption className="mt-3 flex items-center gap-2.5 text-sm text-slate">
                     <span className="font-mono text-[0.6rem] font-semibold tracking-[0.18em] text-amber-deep">
                       {String(i + 1).padStart(2, "0")}

@@ -81,7 +81,7 @@ export function StoryLightbox({
                   {story.title}
                 </p>
                 <p className="truncate font-mono text-[0.6rem] tracking-[0.14em] text-slate-light uppercase">
-                  {story.platform} · {story.model} · {story.period}
+                  {story.platform} · {story.period}
                 </p>
               </div>
             </div>

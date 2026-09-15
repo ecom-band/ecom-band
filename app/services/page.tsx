@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { PageHero } from "@/components/blocks/PageHero";
+import Image from "next/image";
+import { ServicesHero } from "@/components/services/ServicesHero";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ButtonLink } from "@/components/ui/Button";
@@ -20,15 +21,9 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
-      <PageHero
-        eyebrow="Services"
-        title="E-Commerce Services Built for Growth"
-        lead="From Amazon wholesale and private label to Shopify, Walmart, eBay, and TikTok Shop, ECOM BAND provides specialized solutions for building and scaling e-commerce businesses."
-        cta={{ label: "Talk to Our Team", href: "/contact" }}
-        band
-      />
+      <ServicesHero />
 
-      <Section tone="paper">
+      <Section tone="paper" id="overview" className="scroll-mt-20">
         <Reveal>
           <SectionHeading
             eyebrow="Service Overview"
@@ -57,7 +52,17 @@ export default function ServicesPage() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-16">
           {/* IMG-23 — the advisory conversation */}
           <Reveal>
-            <ImagePlaceholder spec={servicesImages.guidance} id="IMG-23" />
+            {servicesImages.guidance.src ? (
+              <Image
+                src={servicesImages.guidance.src}
+                alt={servicesImages.guidance.title}
+                width={servicesImages.guidance.width}
+                height={servicesImages.guidance.height}
+                className="aspect-[4/3] w-full rounded-xl object-cover"
+              />
+            ) : (
+              <ImagePlaceholder spec={servicesImages.guidance} id="IMG-23" />
+            )}
           </Reveal>
           <Reveal delay={0.1}>
             <SectionHeading

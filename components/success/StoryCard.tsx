@@ -70,7 +70,7 @@ export function StoryCard({
               dark ? "text-slate-light/80" : "text-slate",
             )}
           >
-            {story.model} · {story.period}
+            {story.period}
           </p>
         </div>
       </div>

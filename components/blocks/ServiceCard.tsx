@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   Package,
@@ -18,7 +19,7 @@ import { cn } from "@/lib/cn";
 import { PlatformBadge } from "./PlatformBadge";
 import { ImagePlaceholder, type ImageSpec } from "./ImagePlaceholder";
 
-const serviceIcon: Record<string, LucideIcon> = {
+export const serviceIcon: Record<string, LucideIcon> = {
   "amazon-fba-wholesale": Package,
   "amazon-fbm-wholesale": Truck,
   "amazon-private-label": Tag,
@@ -40,7 +41,7 @@ export function ServiceCard({
   /** "card" = short homepage blurb, "overview" = fuller services-page copy */
   blurb?: "card" | "overview";
   /** Optional thumbnail spec — renders a media strip above the card body. */
-  image?: ImageSpec;
+  image?: ImageSpec & { src?: string; width?: number; height?: number };
   imageId?: string;
 }) {
   const Icon = serviceIcon[service.slug] ?? Package;
@@ -64,12 +65,22 @@ export function ServiceCard({
       />
       {image && (
         <div className="border-b border-ink/8 bg-paper-soft/60 p-3 pb-0">
-          <ImagePlaceholder
-            spec={image}
-            id={imageId}
-            compact
-            className="rounded-b-none border-b-0"
-          />
+          {image.src ? (
+            <Image
+              src={image.src}
+              alt={image.title}
+              width={image.width}
+              height={image.height}
+              className="aspect-[16/10] w-full rounded-lg object-cover"
+            />
+          ) : (
+            <ImagePlaceholder
+              spec={image}
+              id={imageId}
+              compact
+              className="rounded-b-none border-b-0"
+            />
+          )}
         </div>
       )}
       <div className={cn("flex flex-1 flex-col", image && "p-6 sm:p-7")}>

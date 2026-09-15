@@ -11,7 +11,7 @@ import { StoriesTour } from "@/components/success/StoriesTour";
 export const metadata: Metadata = {
   title: "Success Stories",
   description:
-    "Real seller dashboards from client accounts managed by ECOM BAND across Amazon, Shopify, Walmart, eBay, and TikTok Shop.",
+    "Real seller dashboards from client accounts managed by ECOM BAND across Amazon and Shopify.",
 };
 
 const readingNotes = [
