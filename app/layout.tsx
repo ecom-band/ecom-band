@@ -3,7 +3,7 @@ import { Archivo, Instrument_Sans, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ConsentAnalytics } from "@/components/layout/ConsentAnalytics";
+import { Analytics } from "@/components/layout/Analytics";
 import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
 import { ConsultationPopup } from "@/components/layout/ConsultationPopup";
 import "./globals.css";
@@ -89,7 +89,7 @@ export default function RootLayout({
         <main id="main">{children}</main>
         <Footer />
         <WhatsAppWidget />
-        <ConsentAnalytics />
+        <Analytics />
         <ConsultationPopup />
       </body>
     </html>

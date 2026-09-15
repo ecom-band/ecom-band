@@ -28,7 +28,7 @@ npm run dev
 | `CONTACT_TO` | Inquiry recipient (default `inquiry@ecomband.com`) |
 | `CONTACT_FROM` | Sender on a Resend-verified domain, e.g. `ECOM BAND <website@ecomband.com>` |
 | `RESEND_SEGMENT_ID` | Resend segment that leads who tick the marketing opt-in are added to (optional; opt-in is always recorded in the email) |
-| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID — loads only after cookie consent |
+| `NEXT_PUBLIC_GA_ID` | GA4 measurement ID — loads on every page when set (no cookie banner) |
 
 ## Content editing
 
