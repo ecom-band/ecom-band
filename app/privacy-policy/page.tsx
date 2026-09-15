@@ -53,6 +53,7 @@ export default function PrivacyPolicyPage() {
         <ul>
           <li>To respond to your inquiries and facilitate discussions regarding investment opportunities</li>
           <li>To provide you with requested materials, such as operational dashboards, financial projections, or company presentations</li>
+          <li>To send you marketing communications about our services, such as e-commerce tips and updates, where you have expressly opted in. You can withdraw consent at any time via the unsubscribe link in any such email or by contacting us</li>
           <li>To maintain and improve the security, functionality, and performance of our website</li>
           <li>To comply with applicable legal obligations and resolve any disputes</li>
         </ul>

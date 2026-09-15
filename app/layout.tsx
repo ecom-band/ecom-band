@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { ConsentAnalytics } from "@/components/layout/ConsentAnalytics";
 import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
+import { ConsultationPopup } from "@/components/layout/ConsultationPopup";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -89,6 +90,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppWidget />
         <ConsentAnalytics />
+        <ConsultationPopup />
       </body>
     </html>
   );

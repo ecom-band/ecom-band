@@ -27,6 +27,7 @@ npm run dev
 | `RESEND_API_KEY` | Required in production for the contact form |
 | `CONTACT_TO` | Inquiry recipient (default `inquiry@ecomband.com`) |
 | `CONTACT_FROM` | Sender on a Resend-verified domain, e.g. `ECOM BAND <website@ecomband.com>` |
+| `RESEND_SEGMENT_ID` | Resend segment that leads who tick the marketing opt-in are added to (optional; opt-in is always recorded in the email) |
 | `NEXT_PUBLIC_GA_ID` | GA4 measurement ID — loads only after cookie consent |
 
 ## Content editing
@@ -38,7 +39,29 @@ All copy and data live in [`content/`](content/):
 - `faq.ts` — grouped FAQs; `featured: true` items appear on the homepage
 - `process.ts` — the 5-step process
 - `nav.ts` — header/footer navigation
+- `popup.ts` — consultation popup: on/off switch, scroll delay, cooldowns, excluded routes, copy
 - `success-stories.ts` — dashboard screenshots for the homepage strip and `/success-stories`; images live in `public/success-stories/`. Current entries are generated **sample** SVGs (`placeholder: true`) — replace them with real, redacted client screenshots (see the how-to comment at the top of the file)
+
+## Consultation popup
+
+`components/layout/ConsultationPopup.tsx` shows the inquiry form in a modal to
+new visitors once they have scrolled and ~5.5 s have passed. It reuses
+`ContactForm` (`source="popup"`), so both forms share validation, the API route,
+the Resend email, and the GA4 `generate_lead` event (now tagged with `source`
+and `marketing_opt_in`).
+
+- Closed without submitting → hidden for 7 days; submitted → hidden for 180 days
+  (stored in `localStorage` under `ecomband-consultation-popup`).
+- Never opens on `/contact`, `/privacy-policy`, `/terms`.
+- All timings, cooldowns and copy live in `content/popup.ts`; set `enabled: false`
+  to switch it off.
+- To test locally, clear the `ecomband-consultation-popup` key in DevTools →
+  Application → Local Storage, reload, and scroll.
+
+Both forms include an **unchecked-by-default marketing opt-in** checkbox. The
+choice is written into the notification email; when `RESEND_SEGMENT_ID` is set,
+opted-in leads are also created as contacts in that Resend segment so they can
+be emailed via Resend Broadcasts.
 
 To activate the WhatsApp widget or phone display: set the value and flip
 `display: true` in `content/site.ts`.
